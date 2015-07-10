@@ -1,0 +1,12 @@
+{
+  "name": "url-highlighter",
+  "title": "URL Highlighter",
+  "id": "jid1-pWtipNBMJlzZow",
+  "description": "Highlight or Copy to Clipboard all URLs which has specified domain",
+  "author": "",
+  "license": "MPL 2.0",
+  "version": "0.1",
+  "permissions": {
+    "private-browsing": true
+  }
+}

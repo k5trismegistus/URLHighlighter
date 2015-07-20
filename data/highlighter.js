@@ -1,34 +1,37 @@
-self.port.on('activate', activate);
-
 var activatedSpecifies = [];
 
-function activate(specify) {
-  console.log(specify);
-  console.log(activatedSpecifies);
+self.port.on('set', function(activatedSpecifies) {
+    this.activatedSpecifies = activatedSpecifies;
+    highlight(getToHighlight());
+  }
+);
+
+function getToHighlight() {
+  var activatedUrls = [];
+  this.activatedSpecifies.forEach(
+    function(as) {
+      activatedUrls = activatedUrls.concat(as.patterns);
+    }
+  );
+  return activatedUrls;
 }
 
 function highlight(toHighLight) {
-  var anchorNodeArray = Array.slice(document.getElementsByTagName('a'));
+  var anchorNodeArray = document.getElementsByTagName('a');
   var chkUrl = checkUrl(toHighLight);
-  anchorNodeArray.forEach(chkUrl)
+  for (var i = 0; i < anchorNodeArray.length; i++) {
+    chkUrl(anchorNodeArray[i]);
+  }
 }
 
 function checkUrl(toHighLight) {
   return function(a) {
     toHighLight.forEach(
       function (url) {
-        console.log(url);
-        if (url.test(document.location.href)) {
-          return;
-        }
-      
-        if (url.test(a.getAttribute('href'))) {
-            var spanNode = document.createElement('span');
-            spanNode.setAttribute('class', 'lh_highlight');
-            a.parentNode.insertBefore(spanNode, a);
-            spanNode.appendChild(a);
+        if (a.href.indexOf(url) != -1) {
+            a.setAttribute('class', 'lh_highlight');
         }
       }
     );
-  }
+  };
 }

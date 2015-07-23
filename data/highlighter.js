@@ -1,14 +1,14 @@
-var activatedSpecifies = [];
+var activatedProfiles = [];
 
-self.port.on('set', function(activatedSpecifies) {
-    this.activatedSpecifies = activatedSpecifies;
+self.port.on('set', function(activatedProfiles) {
+    this.activatedProfiles = activatedProfiles;
     highlight(getToHighlight());
   }
 );
 
 function getToHighlight() {
   var activatedUrls = [];
-  this.activatedSpecifies.forEach(
+  this.activatedProfiles.forEach(
     function(as) {
       activatedUrls = activatedUrls.concat(as.patterns);
     }

@@ -1,21 +1,21 @@
 self.port.on('setupPanel', setupPanel);
 // self.port.on('logInnerHTML', logInnerHTML);
 
-function setupPanel(specifies) {
-  specifies.forEach(addSpecifyToPanel);
+function setupPanel(Profiles) {
+  Profiles.forEach(addProfileToPanel);
   
   // (function() {
   //     $(':checkbox').iphoneStyle();
   // })();
 }
 
-function addSpecifyToPanel(specify)
+function addProfileToPanel(Profile)
 {
     var element = document.createElement('tr');
-    element.className = 'specify';
+    element.className = 'Profile';
     var th = document.createElement('th');
-    th.className = 'specify-title'
-    description = document.createTextNode(specify.name);
+    th.className = 'Profile-title'
+    description = document.createTextNode(Profile.name);
     th.appendChild(description);
 
     var td = document.createElement('td');
@@ -23,9 +23,9 @@ function addSpecifyToPanel(specify)
     checkbox_highlight.type = 'checkbox';
     checkbox_highlight.addEventListener('click', function(e) {
       if (this.checked) {
-        self.port.emit('activate', specify);
+        self.port.emit('activate', Profile);
       } else {
-        self.port.emit('deactivate', specify);
+        self.port.emit('deactivate', Profile);
       }
     });
     td.appendChild(checkbox_highlight);
@@ -33,5 +33,5 @@ function addSpecifyToPanel(specify)
     element.appendChild(th);
     element.appendChild(td);
 
-    document.getElementById('specifies').appendChild(element);
+    document.getElementById('Profiles').appendChild(element);
 }

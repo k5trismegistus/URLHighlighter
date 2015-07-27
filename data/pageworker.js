@@ -1,10 +1,9 @@
 var activatedProfiles = [];
 
-self.port.on('set', function(activatedProfiles) {
+self.port.on('set', function (activatedProfiles) {
     this.activatedProfiles = activatedProfiles;
     highlight(getToHighlight());
-  }
-);
+});
 
 function getToHighlight() {
   var activatedUrls = [];
@@ -29,9 +28,8 @@ function checkUrl(toHighLight) {
     toHighLight.forEach(
       function (url) {
         if (a.href.indexOf(url) != -1) {
-            a.setAttribute('class', 'lh_highlight');
+            a.style.backgroundColor = "yellow";
         }
-      }
-    );
-  };
+    });
+  }
 }

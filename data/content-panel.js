@@ -1,16 +1,11 @@
+// setup on load
 self.port.on('setupPanel', setupPanel);
-// self.port.on('logInnerHTML', logInnerHTML);
-
 function setupPanel(Profiles) {
   Profiles.forEach(addProfileToPanel);
-  
-  // (function() {
-  //     $(':checkbox').iphoneStyle();
-  // })();
 }
 
-function addProfileToPanel(Profile)
-{
+// add new profile box to panel
+function addProfileToPanel (Profile) {
     var element = document.createElement('tr');
     element.className = 'Profile';
     var th = document.createElement('th');
@@ -35,3 +30,18 @@ function addProfileToPanel(Profile)
 
     document.getElementById('Profiles').appendChild(element);
 }
+
+// on new profile added
+self.port.on('addProfile', function (newProfile) {
+  addProfileToPanel(newProfile);
+});
+
+// add new profile
+document.getElementById('new-profile-save-button').addEventListener('click', function () {
+  var newProfile = {
+    id: Math.floor(Math.random()*1000),
+    name:  $("#new-profile-name").val(),
+    patterns:  $("#new-profile-pattern").val().split(",")
+  };
+  self.port.emit('add-profile', newProfile);
+});

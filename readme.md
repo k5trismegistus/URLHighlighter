@@ -11,7 +11,7 @@
 
 ![empty_panel](https://github.com/k5trismegistus/URLHighlighter/blob/master/docs/images/empty_panel.png)
 
-プロファイルは名前とキーワードが指定可能で、キーワードはカンマ区切りで入力します。たとえば「Google」という名前のプロファイルで'google'と'youtube'という２つのキーワードをハイライトしたりできるようにしたい場合は、以下のように入力します。
+プロファイルは名前とキーワードが指定可能で、キーワードはカンマ区切りで入力します。たとえば「Google」という名前のプロファイルで'google'と'youtube'という２つのキーワードをハイライトしたりできるようにしたい場合は、以下のように入力します。(google, youtubeみたいにしたくなると思いますが、スペースは入れないで。)
 
 ![input](https://github.com/k5trismegistus/URLHighlighter/blob/master/docs/images/input.png)
 
@@ -27,47 +27,51 @@
 
 また、Copy Allボタンを押した結果はこのようになりました。
 
-https://plus.google.com/?gpsrc=ogpy0&tab=wX
-https://www.google.co.jp/webhp?tab=ww
-https://www.google.co.jp/imghp?hl=ja&tab=wi
-https://maps.google.co.jp/maps?hl=ja&tab=wl
-https://play.google.com/?hl=ja&tab=w8
-https://www.youtube.com/?gl=JP&tab=w1
-https://news.google.co.jp/nwshp?hl=ja&tab=wn
-https://mail.google.com/mail/?tab=wm
-http://www.google.co.jp/intl/ja/options/
-https://drive.google.com/?tab=wo
-https://www.google.com/calendar?tab=wc
-https://translate.google.co.jp/?hl=ja&tab=wT
-https://books.google.co.jp/bkshp?hl=ja&tab=wp
-http://www.google.co.jp/shopping?hl=ja&tab=wf
-https://photos.google.com/?tab=wq
-http://video.google.co.jp/?hl=ja&tab=wv
-https://docs.google.com/document/?usp=docs_alc
-http://www.google.co.jp/intl/ja/options/
-https://accounts.google.com/ServiceLogin?hl=ja&continue=https://www.google.co.jp/%3Fgfe_rd%3Dcr%26ei%3DpLe4VdOQHcGT8QfqmJmoBQ%26gws_rd%3Dssl
-http://www.google.co.jp/preferences?hl=ja
-https://www.google.co.jp/preferences?hl=ja
-https://www.google.co.jp/advanced_search?hl=ja
-https://www.google.co.jp/language_tools?hl=ja
-http://www.google.co.jp/history/optout?hl=ja
-https://www.google.co.jp/webhp?hl=ja
-https://www.google.co.jp/support/websearch/bin/answer.py?answer=186645&form=bb&hl=ja
-https://www.google.co.jp/intl/ja/policies/privacy/?fg=1
-https://www.google.co.jp/intl/ja/policies/terms/?fg=1
-https://www.google.co.jp/preferences?hl=ja
-https://www.google.co.jp/preferences?hl=ja&fg=1
-https://www.google.co.jp/advanced_search?hl=ja&fg=1
-https://www.google.co.jp/history/optout?hl=ja&fg=1
-https://support.google.com/websearch/?p=ws_results_help&hl=ja&fg=1
-https://www.google.com/?gfe_rd=cr&ei=pLe4VdOQHcGT8QfqmJmoBQ&gws_rd=ssl,cr&fg=1
-https://www.google.co.jp/intl/ja/ads/?fg=1
-https://www.google.co.jp/services/?fg=1
-https://www.google.co.jp/intl/ja/about.html?fg=1
+https://plus.google.com/?gpsrc=ogpy0&tab=wX  
+https://www.google.co.jp/webhp?tab=ww  
+https://www.google.co.jp/imghp?hl=ja&tab=wi  
+https://maps.google.co.jp/maps?hl=ja&tab=wl  
+https://play.google.com/?hl=ja&tab=w8  
+https://www.youtube.com/?gl=JP&tab=w1  
+https://news.google.co.jp/nwshp?hl=ja&tab=wn  
+https://mail.google.com/mail/?tab=wm  
+http://www.google.co.jp/intl/ja/options/  
+https://drive.google.com/?tab=wo  
+https://www.google.com/calendar?tab=wc  
+https://translate.google.co.jp/?hl=ja&tab=wT  
+https://books.google.co.jp/bkshp?hl=ja&tab=wp  
+http://www.google.co.jp/shopping?hl=ja&tab=wf  
+https://photos.google.com/?tab=wq  
+http://video.google.co.jp/?hl=ja&tab=wv  
+https://docs.google.com/document/?usp=docs_alc  
+http://www.google.co.jp/intl/ja/options/  
+https://accounts.google.com/ServiceLogin?hl=ja&continue=https://www.google.co.jp/%3Fgfe_rd%3Dcr%26ei%3DpLe4VdOQHcGT8QfqmJmoBQ%26gws_rd%3Dssl  
+http://www.google.co.jp/preferences?hl=ja  
+https://www.google.co.jp/preferences?hl=ja  
+https://www.google.co.jp/advanced_search?hl=ja  
+https://www.google.co.jp/language_tools?hl=ja  
+http://www.google.co.jp/history/optout?hl=ja  
+https://www.google.co.jp/webhp?hl=ja  
+https://www.google.co.jp/support/websearch/bin/answer.py?answer=186645&form=bb&hl=ja  
+https://www.google.co.jp/intl/ja/policies/privacy/?fg=1  
+https://www.google.co.jp/intl/ja/policies/terms/?fg=1  
+https://www.google.co.jp/preferences?hl=ja  
+https://www.google.co.jp/preferences?hl=ja&fg=1  
+https://www.google.co.jp/advanced_search?hl=ja&fg=1  
+https://www.google.co.jp/history/optout?hl=ja&fg=1  
+https://support.google.com/websearch/?p=ws_results_help&hl=ja&fg=1  
+https://www.google.com/?gfe_rd=cr&ei=pLe4VdOQHcGT8QfqmJmoBQ&gws_rd=ssl,cr&fg=1  
+https://www.google.co.jp/intl/ja/ads/?fg=1  
+https://www.google.co.jp/services/?fg=1  
+https://www.google.co.jp/intl/ja/about.html?fg=1  
 
 このように、各URLが改行区切りでクリップボードにコピーされます。Googleのトップページは閲覧環境によって違うので、同じ結果にはならないかもしれません。
 
-Editボタンはプロファイルの設定をフォームに貼り付けた上でプロファイルを削除するボタン（なので編集後保存しないと消えます）、Deleteボタンはプロファイルを削除するボタンです。
+Editボタンはプロファイルの設定をフォームに書き戻した上でプロファイルを削除するボタン（なので編集後保存しないと消えます）、Deleteボタンはプロファイルを削除するボタンです。
 
-プロファイルの削除は基本的に大丈夫なはずですが
-内部でプロファイルに乱数でIDを与えてそれをキーに削除しているため、万に一回くらいは他のプロファイルも一緒に消えるかもしれません。
+基本的に大丈夫なはずですがプロファイルの削除はプロファイルに与えた乱数IDをキーに削除しているため、万に一回くらいは他のプロファイルも一緒に消えるかもしれません。
+
+## Limitaion
+- チェックを入れるほう（ハイライトon）は即時的に反映されますが、チェックを外し（ハイライトoff）てもページを読み込み直すまでは反映されません。
+- ハイライトが有効なのはサーバーサイドでレンダリングされたHTMLに含まれる要素とチェックを入れた瞬間に存在している要素だけです。なのでajaxなどであとから追加された要素に対してはハイライトはかかりません。チェックを外して入れなおしてください。
+- ハイライトの色は黄色限定なので、背景が黄色のサイトでは役に立ちません。プロファイルごとに色を変えたりも今のところできないです。

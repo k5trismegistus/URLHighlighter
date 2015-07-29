@@ -15,10 +15,11 @@ function getToHighlight() {
   return activatedUrls;
 }
 
-function highlight(toHighLight) {
+function highlight(toHighLight) {  
   var anchorNodeArray = document.getElementsByTagName('a');
   chkUrl(anchorNodeArray, toHighLight).forEach( function (a) {
     a.style.backgroundColor = "yellow";
+    a.classList.add('lh-highlight');
   });
 }
 

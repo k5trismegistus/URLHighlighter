@@ -10,9 +10,11 @@ function addProfileToPanel (Profile) {
     var element = document.createElement('ul');
     element.className = 'profile';
     document.getElementById('profiles').appendChild(element);
+    
     // inner list
     var profileLi = document.createElement('li');
     element.appendChild(profileLi);
+    
     // profile toggle switch
     var toggleSw = document.createElement('input');
     toggleSw.type = 'checkbox';
@@ -30,28 +32,58 @@ function addProfileToPanel (Profile) {
     description = document.createTextNode(Profile.name);
     titleLabel.appendChild(description);
     profileLi.appendChild(titleLabel);
+    
+    // button box
+    var buttonBox = document.createElement('div');
+    buttonBox.className = 'buttonContainer';
+    profileLi.appendChild(buttonBox);
+    
+    // profile edit button
+    var editButton = document.createElement('div');
+    editButton.className = 'button edit-button';
+    profileLi.appendChild(editButton);
+    var editButtonLabel = document.createElement('span');
+    editButtonLabel.className = 'edit-button-text';
+    var text = document.createTextNode('Edit');
+    editButtonLabel.appendChild(text);
+    editButton.appendChild(editButtonLabel);
+    editButton.addEventListener('click', function(){
+      editProfile(element, Profile)
+    });
+    buttonBox.appendChild(editButton);
+    
     // profile remove button
     var removeButton = document.createElement('div');
-    removeButton.className = 'remove-button';
+    removeButton.className = 'button remove-button';
     profileLi.appendChild(removeButton);
-    
     var removeButtonLabel = document.createElement('span');
     removeButtonLabel.className = 'remove-button-text';
     var text = document.createTextNode('Delete');
     removeButtonLabel.appendChild(text);
     removeButton.appendChild(removeButtonLabel);
-    
-    removeButton.addEventListener('click', function(e) {
-      self.port.emit('removeProfile', Profile);
-      element.remove();
+    removeButton.addEventListener('click', function() {
+      removeProfile(element, Profile)
     });
-    profileLi.appendChild(removeButton);
+    button.appendChild(removeButton);
 }
 
 // on new profile added
 self.port.on('addProfile', function (newProfile) {
   addProfileToPanel(newProfile);
 });
+
+// edit profile
+function editProfile (element, Profile) {
+  $("#new-profile-name").val(Profile.name);
+  $("#new-profile-pattern").val(Profile.patterns.join(','));
+  removeProfile(element, Profile);
+}
+
+// remove new profile
+function removeProfile (element, Profile) {
+  self.port.emit('removeProfile', Profile);
+  element.remove();
+}
 
 // add new profile
 document.getElementById('new-profile-save-button').addEventListener('click', function () {
@@ -61,4 +93,6 @@ document.getElementById('new-profile-save-button').addEventListener('click', fun
     patterns:  $("#new-profile-pattern").val().split(",")
   };
   self.port.emit('add-profile', newProfile);
+  $("#new-profile-name").val('');
+  $("#new-profile-pattern").val('');
 });

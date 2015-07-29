@@ -57,6 +57,14 @@ label {
 	text-decoration: none;
 }
 
+.copy-button {
+  background: #ff0000;
+  color: #ffffff;
+}
+.copy-button:hover {
+  background:#eb2c0c;
+}
+
 .edit-button {
   background: #00ff00;
   color: #ffffff;
@@ -70,5 +78,13 @@ label {
   color: #ffffff;
 }
 .remove-button:hover {
+  background:#eb2c0c;
+}
+
+.save-button {
+  background: #ff0000;
+  color: #ffffff;
+}
+.save-button:hover {
   background:#eb2c0c;
 }

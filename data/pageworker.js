@@ -17,19 +17,29 @@ function getToHighlight() {
 
 function highlight(toHighLight) {
   var anchorNodeArray = document.getElementsByTagName('a');
-  var chkUrl = checkUrl(toHighLight);
-  for (var i = 0; i < anchorNodeArray.length; i++) {
-    chkUrl(anchorNodeArray[i]);
-  }
+  chkUrl(anchorNodeArray, toHighLight).forEach( function (a) {
+    a.style.backgroundColor = "yellow";
+  });
 }
 
-function checkUrl(toHighLight) {
-  return function(a) {
-    toHighLight.forEach(
-      function (url) {
-        if (a.href.indexOf(url) != -1) {
-            a.style.backgroundColor = "yellow";
-        }
-    });
+function chkUrl(anchors, patterns) {
+  var matchedAnchors = [];
+  for (var i = 0; i < anchors.length; i++) {
+    for (var j= 0; j < patterns.length; j++) {
+      if ( anchors[i].href.indexOf(patterns[j]) != -1 ) {
+        matchedAnchors.push(anchors[i]);
+      }
+    }
   }
+  return matchedAnchors;
+}
+
+self.port.on('correctUrl', correctUrl);
+function correctUrl(toCopyProfile) {
+  var anchorNodeArray = document.getElementsByTagName('a');
+  var copied = '';
+  chkUrl(anchorNodeArray, toCopyProfile.patterns).forEach( function (a) {
+    copied = copied + a.href + '\n';
+  });
+  self.port.emit('copied', copied);
 }

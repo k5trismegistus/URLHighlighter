@@ -26,6 +26,7 @@ function addProfileToPanel (Profile) {
       }
     });
     profileLi.appendChild(toggleSw);
+    
     // profile title
     var titleLabel = document.createElement('label');
     titleLabel.className = 'profile-title';
@@ -37,6 +38,20 @@ function addProfileToPanel (Profile) {
     var buttonBox = document.createElement('div');
     buttonBox.className = 'buttonContainer';
     profileLi.appendChild(buttonBox);
+    
+    // copy all button
+    var copyButton = document.createElement('div');
+    copyButton.className = 'button copy-button';
+    profileLi.appendChild(copyButton);
+    var copyButtonLabel = document.createElement('span');
+    copyButtonLabel.className = 'copy-button-text';
+    var text = document.createTextNode('Copy All');
+    copyButtonLabel.appendChild(text);
+    copyButton.appendChild(copyButtonLabel);
+    copyButton.addEventListener('click', function(e) {
+      self.port.emit('copy', Profile);
+    });
+    buttonBox.appendChild(copyButton);
     
     // profile edit button
     var editButton = document.createElement('div');
@@ -64,7 +79,7 @@ function addProfileToPanel (Profile) {
     removeButton.addEventListener('click', function() {
       removeProfile(element, Profile)
     });
-    button.appendChild(removeButton);
+    buttonBox.appendChild(removeButton);
 }
 
 // on new profile added
@@ -85,8 +100,8 @@ function removeProfile (element, Profile) {
   element.remove();
 }
 
-// add new profile
-document.getElementById('new-profile-save-button').addEventListener('click', function () {
+// add new profile from form
+document.getElementById('save-button').addEventListener('click', function () {
   var newProfile = {
     id: Math.floor(Math.random()*1000),
     name:  $("#new-profile-name").val(),

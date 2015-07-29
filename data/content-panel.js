@@ -6,29 +6,46 @@ function setupPanel(Profiles) {
 
 // add new profile box to panel
 function addProfileToPanel (Profile) {
-    var element = document.createElement('tr');
-    element.className = 'Profile';
-    var th = document.createElement('th');
-    th.className = 'Profile-title'
-    description = document.createTextNode(Profile.name);
-    th.appendChild(description);
-
-    var td = document.createElement('td');
-    var checkbox_highlight = document.createElement('input');
-    checkbox_highlight.type = 'checkbox';
-    checkbox_highlight.addEventListener('click', function(e) {
+    // outer box
+    var element = document.createElement('ul');
+    element.className = 'profile';
+    document.getElementById('profiles').appendChild(element);
+    // inner list
+    var profileLi = document.createElement('li');
+    element.appendChild(profileLi);
+    // profile toggle switch
+    var toggleSw = document.createElement('input');
+    toggleSw.type = 'checkbox';
+    toggleSw.addEventListener('click', function(e) {
       if (this.checked) {
         self.port.emit('activate', Profile);
       } else {
         self.port.emit('deactivate', Profile);
       }
     });
-    td.appendChild(checkbox_highlight);
-
-    element.appendChild(th);
-    element.appendChild(td);
-
-    document.getElementById('Profiles').appendChild(element);
+    profileLi.appendChild(toggleSw);
+    // profile title
+    var titleLabel = document.createElement('label');
+    titleLabel.className = 'profile-title';
+    description = document.createTextNode(Profile.name);
+    titleLabel.appendChild(description);
+    profileLi.appendChild(titleLabel);
+    // profile remove button
+    var removeButton = document.createElement('div');
+    removeButton.className = 'remove-button';
+    profileLi.appendChild(removeButton);
+    
+    var removeButtonLabel = document.createElement('span');
+    removeButtonLabel.className = 'remove-button-text';
+    var text = document.createTextNode('Delete');
+    removeButtonLabel.appendChild(text);
+    removeButton.appendChild(removeButtonLabel);
+    
+    removeButton.addEventListener('click', function(e) {
+      self.port.emit('removeProfile', Profile);
+      element.remove();
+    });
+    profileLi.appendChild(removeButton);
 }
 
 // on new profile added

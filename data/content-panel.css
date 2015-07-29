@@ -1,6 +1,14 @@
 * {
+}
+
+body {
   background-color: white;
-  margin: 2px;
+}
+
+#profiles {
+  min-height: 360px;
+  max-height: 360px;
+  overflow: auto;
 }
 
 .profile {
@@ -9,5 +17,40 @@
   border-width: 1px;
   border-color: black;
   margin: 8px;
+  padding: 4px 8px;
+}
+
+#add-new {
   padding: 2px;
+}
+
+input.textarea {
+  font-size: 14px;
+}
+
+ul li {
+  list-style: none;
+}
+label {
+  width: 150px;
+  margin-right: 10px;
+  float: left;
+}
+
+.remove-button{
+	width:20%;
+	padding: 2px 6px;
+	background: #ff0000;
+  color: #ffffff;
+  font-weight: bold;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.remove-button:hover{
+	text-decoration: none;
+	background:#eb2c0c;
 }

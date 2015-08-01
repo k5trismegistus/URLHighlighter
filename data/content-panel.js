@@ -15,18 +15,6 @@ function addProfileToPanel (Profile) {
     var profileLi = document.createElement('li');
     element.appendChild(profileLi);
     
-    // profile toggle switch
-    var toggleSw = document.createElement('input');
-    toggleSw.type = 'checkbox';
-    toggleSw.addEventListener('click', function(e) {
-      if (this.checked) {
-        self.port.emit('activate', Profile);
-      } else {
-        self.port.emit('deactivate', Profile);
-      }
-    });
-    profileLi.appendChild(toggleSw);
-    
     // profile title
     var titleLabel = document.createElement('label');
     titleLabel.className = 'profile-title';
@@ -38,6 +26,28 @@ function addProfileToPanel (Profile) {
     var buttonBox = document.createElement('div');
     buttonBox.className = 'buttonContainer';
     profileLi.appendChild(buttonBox);
+    
+    // profile highlight button
+    var highlightButton = document.createElement('div');
+    highlightButton.className = 'button highlight-button-disabled';
+    profileLi.appendChild(highlightButton);
+    var highlightButtonLabel = document.createElement('span');
+    highlightButtonLabel.className = 'highlight-button-text';
+    var text = document.createTextNode('Highlight');
+    highlightButtonLabel.appendChild(text);
+    highlightButton.appendChild(highlightButtonLabel);
+    highlightButton.addEventListener('click', function(e) {
+      if (highlightButton.classList.contains('highlight-button-disabled')) {
+        highlightButton.classList.remove('highlight-button-disabled');
+        highlightButton.classList.add('highlight-button-enabled');
+        self.port.emit('activate', Profile);
+      } else {
+        highlightButton.classList.remove('highlight-button-enabled');
+        highlightButton.classList.add('highlight-button-disabled');
+        self.port.emit('deactivate', Profile);
+      }
+    });
+    buttonBox.appendChild(highlightButton);
     
     // copy all button
     var copyButton = document.createElement('div');

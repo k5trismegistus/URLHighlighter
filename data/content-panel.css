@@ -57,6 +57,16 @@ label {
 	text-decoration: none;
 }
 
+.highlight-button-disabled{
+  background: #e0e0e0;
+  color: #ffffff;
+}
+
+highlight-button-enabled{
+  background: #e0003e;
+  color: #ffffff;
+}
+
 .copy-button {
   background: #ff0000;
   color: #ffffff;

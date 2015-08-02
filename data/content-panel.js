@@ -17,7 +17,7 @@ function addProfileToPanel (Profile) {
     
     // profile title
     var titleLabel = document.createElement('label');
-    titleLabel.className = 'profile-title';
+    titleLabel.className = 'profile-label';
     description = document.createTextNode(Profile.name);
     titleLabel.appendChild(description);
     profileLi.appendChild(titleLabel);

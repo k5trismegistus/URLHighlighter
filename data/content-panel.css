@@ -1,100 +1,132 @@
 * {
+  font-family: monospace;
 }
-
-body {
-  background-color: white;
+  body{
+    margin: 0px;
+    background: #FFFFFF
+  }
+.panel-content{
+  max-width: 320px;
+  max-height: 480px;
+  margin: 0px;
 }
-
-#profiles {
-  min-height: 360px;
-  max-height: 360px;
-  overflow: auto;
-}
-
-.profile {
-  border-style: solid;
-  border-radius: 4px;
-  border-width: 1px;
-  border-color: black;
-  margin: 8px;
-  padding: 4px 8px;
-}
-
-#add-new {
-  padding: 2px;
-}
-
-input.textarea {
-  font-size: 14px;
-}
-
-ul li {
-  list-style: none;
-}
-label {
-  width: 150px;
-  margin-right: 10px;
-  float: left;
-}
-
-.buttonContainer {
-  overflow: hidden;
-}
-
-.button {
-	width:20%;
-	padding: 2px 6px;
+#header{
+  width: 320px;
+  height: 60px;
+  background: black;
+  color: white;
+  position: absolute;
+  top: 0px;
+  margin: 0px;
+  font-size: 28px;
   font-weight: bold;
-	text-align: center;
-	display: block;
-	text-decoration: none;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  float: left;
 }
-.button:hover{
-	text-decoration: none;
+#header div{
+  margin: 16px 8px;
 }
+    #profiles {
+      position: relative;
+      top: 60px;
+      min-height: 330px;
+      max-height: 330px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: #FFFFFF;
+    }
+    .profile-label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .profile {
+      margin: 8px;
+      padding: 0px;
+    }
+    ul li {
+      list-style: none;
+      height: 60px;
+      margin-top: 20px;
+      background: white;
+    }
+    .profile-label {
+      font-size: 20px;
+      width: 320px;
+      height: 40px;
+      padding: 0px 8px;
+      display: table-cell;
+      vertical-align: middle;
+      border-bottom: solid 1px #cccccc; 
+    }
+    .buttonContainer {
+      width: 304px;
+      height: 20px;
+      overflow: hidden;
+    }
+    .button {
+      width: 76px;
+      height: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin: 0px;
+      font-size: 12px;
+      cursor: pointer;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .button:hover {
+      text-decoration: none;
+    }
+    .button-text {
+      margin: 0px;
+    }
+    .highlight-button-disabled:hover {
+      background: #CCCC00;
+    }
+    .highlight-button-enabled {
+      background: #FFFF00;
+    }
+    .highlight-button-enabled:hover {
+      background: #CCCC00;
+    }
+    .copy-button:hover {
+      background: #4688F4;
+    }
+    .edit-button:hover {
+      background: #139F5A;
+    }
+    .remove-button:hover {
+      background: #DD4C40;
+    }
+    #add-new {
+      background: #ffffff;
+      border-top: solid 1px #cccccc;
+      position: absolute;
+      margin-top: 9px;
+      padding: 0px;
+      bottom: 0px;
+    }
+    .add-new-text{
+      font-size: 16px;
+      font-weight: bold;
+      padding: 6px 0px 0px 8px;
+    }
+    .input-area{
+      margin: 6px 0px;
+      text-align: center; 
+      
+    }
+    .textarea {
+      font-size: 12px;
 
-.highlight-button-disabled{
-  background: #e0e0e0;
-  color: #ffffff;
-}
-
-highlight-button-enabled{
-  background: #e0003e;
-  color: #ffffff;
-}
-
-.copy-button {
-  background: #ff0000;
-  color: #ffffff;
-}
-.copy-button:hover {
-  background:#eb2c0c;
-}
-
-.edit-button {
-  background: #00ff00;
-  color: #ffffff;
-}
-.edit-button:hover {
-  background:#2ceb0c;
-}
-
-.remove-button {
-  background: #ff0000;
-  color: #ffffff;
-}
-.remove-button:hover {
-  background:#eb2c0c;
-}
-
-.save-button {
-  background: #ff0000;
-  color: #ffffff;
-}
-.save-button:hover {
-  background:#eb2c0c;
-}
+    }
+    .save-button {
+      min-width: 320px;
+      max-width: 320px;
+      height: 28px;
+      margin: 0px;
+      font-size: 18px;
+      color: rgb(255, 255, 255);
+      background: rgb(255, 0, 0);
+    }
+    .save-button:hover {
+      background: rgb(235, 44, 12);
+    }

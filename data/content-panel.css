@@ -112,11 +112,15 @@
     .input-area{
       margin: 6px 0px;
       text-align: center; 
-      
     }
     .textarea {
       font-size: 12px;
-
+    }
+    #new-profile-name {
+      width: 100px;
+    }
+    #new-profile-pattern {
+      width: 200px;
     }
     .save-button {
       min-width: 320px;

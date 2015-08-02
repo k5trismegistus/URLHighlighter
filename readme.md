@@ -19,9 +19,13 @@
 
 ![added](https://github.com/k5trismegistus/URLHighlighter/blob/master/docs/images/added.png)
 
-チェックボックスがハイライトするかしないかのトグルスイッチになっており、これをオンにすると…
+一番左のボタンがハイライトするかしないかのトグルスイッチになっています。
 
-![highlighted](https://github.com/k5trismegistus/URLHighlighter/blob/master/docs/images/highlight.png)
+![highlight](https://github.com/k5trismegistus/URLHighlighter/blob/master/docs/images/highlight.png)
+
+これをオンにすると…
+
+![highlighted](https://github.com/k5trismegistus/URLHighlighter/blob/master/docs/images/highlighted.png)
 
 このように'google'と'youtube'を含むリンクがすべてハイライトされました。
 
